@@ -1,0 +1,7 @@
+#! /bin/bash
+#echo "HELLOBASH"
+echo "Enter Country Code"
+read mm
+content=$(curl -sS "https://api.thevirustracker.com/free-api?countryTotal=$mm")
+echo $content | jq -r '.countrydata[]'
+#https://api.thevirustracker.com/free-api?countryTotal=MM

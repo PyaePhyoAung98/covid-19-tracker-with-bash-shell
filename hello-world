@@ -1,0 +1,108 @@
+#! /bin/bash
+# who="World"
+# echo "hello,${who}"
+# echo "Hello, $(whoami)"
+# echo "Who are you?"
+# read who
+# echo "hello, $who"
+#if condition
+# echo "How old are you?"
+# read age
+# if [[ $age -gt 20 ]]; then
+#   #statements
+#   echo "You can drink."
+# else
+#   echo "You are too young to drink."
+# fi
+
+#loop
+# files=/Users/you/dev/*
+# for file in $files
+# do
+#   echo $(basename $file)
+# done
+
+#array
+# beatles=('Jhon' 'Paul' 'George' 'Ringo')
+# echo ${beatles[3]}
+# for beat in $beatles
+#  do
+#   #statements
+#   echo ${beat}
+# done
+# for (( i = 0; i < 10; i++ )); do
+#   #statements
+#   echo $beatles
+# done
+# a=0
+# while [[ "$a" -lt 10 ]]; do
+#   #statements
+#   b="$a"
+#   while [[ "$b" -ge 0 ]]; do
+#     #statements
+#     echo -n "$b "
+#     b=`expr $b - 1`
+#   done
+#   echo
+#   a=`expr $a + 1`
+# done
+
+
+# a=0
+# while [[ $a -lt 10 ]]; do
+#   #statements
+#   echo $a
+#   if [[ $a -eq 5 ]]; then
+#     #statements
+#     break
+#   fi
+#   a=`expr $a + 1`
+# done
+# for var1 in 1 2 3
+# do
+#    for var2 in 0 5
+#    do
+#       if [ $var1 -eq 2 -a $var2 -eq 0 ]
+#       then
+#          break 2
+#       else
+#          echo "$var1 $var2"
+#       fi
+#    done
+# done
+# NUMS=" 1 2 3 4 5 6 7 8"
+# for NUM in $NUMS
+# do
+#   Q=`expr $NUM % 2`
+#   if [[ $Q -eq 0 ]]; then
+#     #statements
+#     echo "Number is an even number!!"
+#     continue
+#   fi
+#   echo "Found odd number"
+# done
+
+# Hello(){
+#   echo "HELLO WORLD $1 $2"
+#   return 10
+# }
+# Hello mgmg aung
+# ret=$?
+# echo "Return value is $ret"
+
+# number_one(){
+#   echo "This is the first function speaking...."
+#   number_two
+# }
+# number_two(){
+#   echo "This is now the second function speaking..."
+# }
+# number_one
+err() {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
+}
+
+if ! do_something; then
+  err "Unable to do_something"
+  exit 1
+fi
