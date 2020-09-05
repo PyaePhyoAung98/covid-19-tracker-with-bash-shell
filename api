@@ -1,7 +1,12 @@
-#! /bin/bash
-#echo "HELLOBASH"
-echo "Enter Country Code"
-read mm
-content=$(curl -sS "https://api.thevirustracker.com/free-api?countryTotal=$mm")
-echo $content | jq -r '.countrydata[]'
-#https://api.thevirustracker.com/free-api?countryTotal=MM
+#!/usr/bin/env bash
+echo "Enter Country code"
+read code
+echo "Enter Country Name"
+read name
+res=`curl -s https://corona-stats.online/$code\?source\=2 \
+  | grep $name \
+  | sed 's/\s*//g ; s/║//g ; s/│/; /g ; s/ //g ; s/\x1b\[[0-9;]*m//g' \
+  | awk -F';' '{print "😷: " $3 ","} {print "🤒:" $8 ","} {print "😊:" $7 ","}  {print "💀: " $5}'`
+
+echo $res
+
