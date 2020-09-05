@@ -1,7 +1,8 @@
 # covid-19-tracker-with-bash-shell
-Preview::
+Preview:: <br/>
 Enter Country code
 mm
+
 Enter Country Name
 Myanmar
 
