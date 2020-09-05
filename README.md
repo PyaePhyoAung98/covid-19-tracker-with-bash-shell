@@ -1,4 +1,6 @@
 # covid-19-tracker-with-bash-shell
+<br/>
+Inspired by: Luke Smith's video <br/>
 Preview:: <br/>
 Enter Country code <br/>
 mm
